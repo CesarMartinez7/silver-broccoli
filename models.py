@@ -99,3 +99,8 @@ class Sonidos():
     def reproducir(self,sound):
         self.sonido=pygame.mixer.Sound(sound)
         self.sonido.play()
+        
+        
+
+
+# PROXIMAMENTE AÑADIR COLLISION CON LA VENTANA PARA Q EL PERSONAJE NO PASE DE LA VENTANA

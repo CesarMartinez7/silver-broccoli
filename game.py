@@ -66,8 +66,14 @@ while ESTADO_JUGANDO:
     if balon.react.top < 0 or balon.react.bottom > ventana.get_height():
         balon.velocidad[1] = -balon.velocidad[1]
         
+    if player1.rect.left < 0 or player1.rect.right > ventana.get_height():
+        print("pegado izquierda")
+        player1.rect.move(y=0) = -player1.rect.move(y=0)
     
-    # print(ventana.get_height(),ventana.get_width())
+    if player1.rect.left < 0 or player1.rect.right > ventana.get_width():
+        print("pegado izquierda")
+        player1.velocidad[0] = -player1.velocidad[0]  # Invertir la velocidad horizontal
+
     ventana.fill(color=colores)
     ventana.blit(FONDOVENTANA,(0,2))
     
