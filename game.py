@@ -1,5 +1,5 @@
 import pygame
-from models import (Balon,Ghost,Musica,Sonidos,Emoji)
+from models import (Balon,Ghost,Musica,Sonidos,Messi)
 pygame.init()
 
 FONDOVENTANA=pygame.image.load("./assets/football-pitch.png")
@@ -20,12 +20,12 @@ musica = Musica("./sounds/aiport.mp3")
 collision_balon=Sonidos()
 
 
-velocidad=[5,5]    
+velocidad=[6,6]    
 
 
 #Instancias Objetos de Display
 player1=Ghost()
-player2=Emoji()
+player2=Messi()
 balon=Balon(velocidad=velocidad)
 
 
@@ -66,13 +66,13 @@ while ESTADO_JUGANDO:
     if balon.react.top < 0 or balon.react.bottom > ventana.get_height():
         balon.velocidad[1] = -balon.velocidad[1]
         
-    if player1.rect.left < 0 or player1.rect.right > ventana.get_height():
-        print("pegado izquierda")
-        player1.rect.move(y=0) = -player1.rect.move(y=0)
+    # if player1.rect.left < 0 or player1.rect.right > ventana.get_height():
+    #     print("pegado izquierda")
+    #     player1.rect.move(y=0) = -player1.rect.move(y=0)
     
-    if player1.rect.left < 0 or player1.rect.right > ventana.get_width():
-        print("pegado izquierda")
-        player1.velocidad[0] = -player1.velocidad[0]  # Invertir la velocidad horizontal
+    # if player1.rect.left < 0 or player1.rect.right > ventana.get_width():
+    #     print("pegado izquierda")
+    #     player1.rect.move[0] = -player1.rect.move[0]  # Invertir la velocidad horizontal
 
     ventana.fill(color=colores)
     ventana.blit(FONDOVENTANA,(0,2))
@@ -84,6 +84,6 @@ while ESTADO_JUGANDO:
     
     
     pygame.display.flip()
-    pygame.time.Clock().tick(60)
+    pygame.time.Clock().tick(90)
 
 pygame.quit()    
