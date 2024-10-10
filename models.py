@@ -1,6 +1,3 @@
-
-
-
 import pygame
 from typing import Any
 
@@ -59,7 +56,7 @@ class Ghost(pygame.sprite.Sprite):
     
 
 
-# Clase con atributos de Emoji
+# Clase con atributos de Messi
 
 class Messi(pygame.sprite.Sprite):
     def __init__(self):
@@ -90,9 +87,18 @@ class Messi(pygame.sprite.Sprite):
         self.ventanaSurface=ventanaGame
         self.ventanaSurface.blit(self.image,self.rect)
 
-# Clase para la musica de de fondo o para otras cosas
+class SinglentonMetaMusic(type):
+    _instancia=dict()
+    def __call__(cls,*args, **kwargs):
+        if cls not in cls._instancia:
+            instancia=super().__call__(*args, **kwargs)
+            cls._instancia[cls] = instancia
+        return cls._instancia[cls]
 
-class Musica():
+
+
+# Clase para la musica de de fondo o para otras cosas
+class Musica(metaclass=SinglentonMetaMusic):
     def __init__(self,cancion) -> None:
         self.cancion=cancion
         pygame.mixer.init() 

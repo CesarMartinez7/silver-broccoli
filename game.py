@@ -49,9 +49,6 @@ def movimientosPersonajes():
 puntos=0
 
 
-
-
-
 while ESTADO_JUGANDO:
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
@@ -73,7 +70,6 @@ while ESTADO_JUGANDO:
     # if player1.rect.left < 0 or player1.rect.right > ventana.get_width():
     #     print("pegado izquierda")
     #     player1.rect.move[0] = -player1.rect.move[0]  # Invertir la velocidad horizontal
-
     ventana.fill(color=colores)
     ventana.blit(FONDOVENTANA,(0,2))
     
